@@ -49,7 +49,8 @@ h3 {
 body {
   margin: 0;
   padding: 0;
-  background-image: url(images/Fond-cyan.jpg);
+  background-color: yellowgreen;
+  /*background-image: url(images/Fond-cyan.jpg);*/
   background-repeat: repeat;
   height: 100vh;
   display: flex;
@@ -968,4 +969,39 @@ text-tuning
   font-weight: bolder;
   font-size: larger;
   color: #EAE8E8;
+}
+
+
+/*//////////////////////AFFICHAGE DES RECETTES//////////////////////*/
+
+
+.recetteContainer{
+  background: red;
+}
+
+.recetteList{
+  background: #749fa9;
+  height: 150px;
+  width: 500px; 
+  margin: 0 auto;
+
+}
+.recetteList2{
+  background: #0cb765;
+  height: 10px;
+  width: 500px; 
+  margin: 0 auto;
+
+}
+.recetteList:hover{
+  background: #85b6c1;
+  cursor: pointer;
+}
+.none{
+  display: none;
+}
+.modal{
+  background: white;
+  position: -webkit-sticky;
+  position: sticky;
 }

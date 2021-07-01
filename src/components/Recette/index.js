@@ -1,5 +1,7 @@
-import React, { useState, useContext } from 'react'
-import { FirebaseContext } from '../Firebase'
+import React, { useState, useContext } from 'react';
+import { FirebaseContext } from '../Firebase';
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const Recette = (props) => {
 
@@ -24,7 +26,14 @@ const Recette = (props) => {
         setcreatedata({...createdata, [e.target.id]: e.target.value });
     }
 
-    const handleSubmit = e => {
+        const history = useHistory()
+
+        const faireRedirection = () => { 
+          let url = "/welcome"
+          history.push(url)
+        }
+
+    /*const handleSubmit = e => {
         //↓ empecher le rechargement de la page
         e.preventDefault();
         //↓ on a destructuré pour recuperer les valeurs dessous
@@ -50,11 +59,26 @@ const Recette = (props) => {
                 props.history.push('/welcome')
             })
 
+    }*/
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        const qs = require('qs');
+        axios.post('https://msprapi.000webhostapp.com/ajoutRecette.php',  qs.stringify({
+        'nom_recette': Titre,
+        'description':Description
+        }))
+        .then((res) => {
+            faireRedirection()
+        })
+        .catch((error) => {
+        console.error(error)
+         })
     }
 
-    const {Titre, Ingrédients, Recette, Catégorie, CatégorieEntrée, CatégoriePlat, CatégorieDessert} = createdata;
+    const {Titre, Ingrédients, Description, Catégorie, CatégorieEntrée, CatégoriePlat, CatégorieDessert} = createdata;
 
-    const btn = Titre === '' || Ingrédients === '' || Recette === ''
+    const btn = Titre === '' || Description === ''
     ? <button disabled>Créer la recette</button> : <button>Créer la recette</button>
 
     return (
@@ -79,12 +103,8 @@ const Recette = (props) => {
                                 <option value={CatégorieDessert}>Dessert</option>                                </select> 
                             </div><br /><br />
                             <div className="inputBox, centerG">
-                                <label htmlFor="Ingrédients" className="centerG">Ingrédients</label><br /><br />
-                                <textarea rows="7" cols="150" onChange={handleChange} value={Ingrédients} type="text" id="Ingrédients" autoComplete="off" placeholder="Pates - Sauces" required/>
-                            </div><br /><br />
-                            <div className="inputBox, centerG">
-                                <label htmlFor="Recette" className="centerG">Recette</label><br /><br />
-                                <textarea rows="7" cols="150" onChange={handleChange} value={Recette} type="text" id="Recette" autoComplete="off" placeholder="1 - Faire bouillir de l'eau en ayant ajouté du sel" required/>
+                                <label htmlFor="Recette" className="centerG">Description</label><br /><br />
+                                <textarea rows="7" cols="150" onChange={handleChange} value={Description} type="text" id="Description" autoComplete="off" placeholder="1 - Faire bouillir de l'eau en ayant ajouté du sel" required/>
                             </div><br /><br /><br />
                             {btn}
                         </form>
