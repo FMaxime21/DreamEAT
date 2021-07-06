@@ -17,7 +17,8 @@ const Recette = (props) => {
         CatégorieDessert: '',
         Pseudo: '',
         Email: '',
-        Password: ''
+        Password: '',
+        Test:''
     }
 
     const [createdata, setcreatedata] = useState(data);
@@ -82,13 +83,14 @@ const Recette = (props) => {
     ? <button disabled>Créer la recette</button> : <button>Créer la recette</button>
 
     return (
+        <div>
         <div className='signUpLoginBox'>
             <div className='slContainer'>
                 <div className="formBoxRight">
                     <div className="formContent">
                         <form  onSubmit={handleSubmit}>
                             <div className="welcomePage2"></div><br />
-                            <h2 className="centerG">Créez ta recette</h2>
+                            <h2 className="centerG">Crée ta recette</h2>
                             <div className="inputBox">
                                 <input onChange={handleChange} value={Titre} type="text" id="Titre" autoComplete="off" placeholder="Pates aux pates" required/>
                                 <label htmlFor="Titre" className="center">Titre</label>
@@ -103,6 +105,12 @@ const Recette = (props) => {
                                 <option value={CatégorieDessert}>Dessert</option>                                </select> 
                             </div><br /><br />
                             <div className="inputBox, centerG">
+
+
+
+                            </div><br /><br />
+
+                            <div className="inputBox, centerG">
                                 <label htmlFor="Recette" className="centerG">Description</label><br /><br />
                                 <textarea rows="7" cols="150" onChange={handleChange} value={Description} type="text" id="Description" autoComplete="off" placeholder="1 - Faire bouillir de l'eau en ayant ajouté du sel" required/>
                             </div><br /><br /><br />
@@ -110,8 +118,9 @@ const Recette = (props) => {
                         </form>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
+    </div>
     )
 }
 

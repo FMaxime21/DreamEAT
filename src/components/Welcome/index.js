@@ -1,5 +1,5 @@
-import React, { useState, Fragment, useContext, useEffect } from 'react'
-import { FirebaseContext } from '../Firebase'
+import React, {useState, Fragment, useContext, useEffect} from 'react'
+import {FirebaseContext} from '../Firebase'
 import Logout from '../Logout'
 import Quiz from '../Quiz'
 import Search from '../Search/search'
@@ -13,24 +13,22 @@ const Welcome = (props) => {
     const [userData, setUserData] = useState('');
 
     useEffect(() => {
-        let listener = firebase.auth.onAuthStateChanged(user =>{
+        let listener = firebase.auth.onAuthStateChanged(user => {
             user ? setUserSession(user) : props.history.push('/');
         })
 
-        if(userSession !== null)
-        {
+        if (userSession !== null) {
             firebase.user(userSession.uid)
-            .get()
-            .then(doc => {
-                if(doc && doc.exists)
-                {
-                    const myData = doc.data();
-                    setUserData(myData);
-                }
-            })
-            .catch( error => {
+                .get()
+                .then(doc => {
+                    if (doc && doc.exists) {
+                        const myData = doc.data();
+                        setUserData(myData);
+                    }
+                })
+                .catch(error => {
 
-            })
+                })
         }
 
         return () => {
@@ -46,16 +44,30 @@ const Welcome = (props) => {
         </Fragment>
     ) : (
         <div>
-        <div className="quiz-bg">
-            <div className="container">
-                <Logout />
-                <Quiz userData={userData}/>
+            <div className="quiz-bg">
+                <div className="container">
+                    <Logout/>
+                    <Quiz userData={userData}/>
+                </div>
             </div>
+            <div>
+                <div className='slContainer2'>
+                    <div className={"formBoxLeftFamille"}>
+                    </div>
+                    <div className="formBoxRight2">
+                        <p>esgfqezrgeqrgyguhvfkzersqeffezqsgyuhiougyzqfzefqzefezfzqeqfezfzqeqfzefeqzfefezqqfzefqezfqzefzeqfezfqezfeqzqfzefezzeqfezqfqfesguyiqfezsugiqzefguiyfezugiyqezfguuqfeigyzizgqigqfzegezqigufgeqzuyiquifgyqzeguyigyuifzeqiguyfiezugygiuyzfeqrgiuyfigeuyzuygfze</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <Search/>
+            </div>
+
         </div>
-        <div>
-        <Search />
-        </div>
-        </div>
+
     )
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import {BrowserRouter as Router, Link} from 'react-router-dom'
 import { FirebaseContext } from '../Firebase'
 
 const Signup = (props) => {
@@ -89,7 +89,8 @@ const Signup = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
+
         </div>
     )
 }

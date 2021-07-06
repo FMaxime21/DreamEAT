@@ -37,13 +37,19 @@ const Landing = () => {
           </tr>
           </table>
         </div>
+
       </Fragment>
+
     )
 
     return (
+        <div>
               <main ref={refWolverine} className="welcomePage">
-                {displayBtn} 
+                {displayBtn}
+
               </main>
+
+        </div>
     );
   }
   

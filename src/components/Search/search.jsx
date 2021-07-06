@@ -49,7 +49,7 @@ class Search extends Component {
       this.state.isOpen === false ? this.setState({ isOpen: true }) : this.setState({ isOpen: false })
     }
 
-    filtreGreg = () => {
+    filtre = () => {
         var nb = this.state.selectValue.length
         var tab = []
         for(let i = 0; i<nb; i++){
@@ -87,12 +87,13 @@ class Search extends Component {
         return(
           tabResultFinal.map((rct,index) => {
             return(
+                <div className={"center1"}>
               <div
               id={rct.id_recette}
               className={"recetteList" }
               onClick = {() => this.getid(rct.id_recette)}>
-              <p style={{padding:"10px"}}>nom de la recette : {rct.nom_recette}</p>
-              <img src = {image} width="100" height="70" style={{position:"relative",left:"180px"}}/>
+              <p   style={{padding:"10px"}}>nom de la recette : {rct.nom_recette}</p>
+              <img src = {image} width="100" height="70" style={{position:"relative"}}/>
               <Modal 
               style={customModal}
               isOpen={this.state.isOpen}
@@ -108,6 +109,7 @@ class Search extends Component {
               </div>
               </Modal>
               </div>
+                </div>
               
             )
           })
@@ -123,21 +125,68 @@ class Search extends Component {
     render(){
       return(
           <div>
-            <Select
-              closeMenuOnSelect={false}
-              components={animatedComponents}
-              isMulti
-              placeholder="choose your ingredients ..."
-              options={option} 
-              onChange={(event) => this.newSelectValue(event)}/>
-         {this.filtreGreg()}
+              <Select
+                  closeMenuOnSelect={false}
+                  components={animatedComponents}
+                  isMulti
+                  placeholder="choose your ingredients ..."
+                  options={groupedOptions}
+                  formatGroupLabel={formatGroupLabel}
+                  onChange={(event) => this.newSelectValue(event)}/>
+         {this.filtre()}
           </div>
       )
     }
 }
 const animatedComponents = makeAnimated();
 
-const option = [
+const groupedOptions = [
+    { label: 'legume', options: [
+            { value: 'oignon', label: 'oignon' },
+            { label: 'courgette', options: 'courgette'},
+            { label: 'carottes', options: 'carottes'},
+            { label: 'carotte', options: 'carotte'},
+        ]},
+    { label: 'fruit', options: [
+            { value: 'apple', label: 'apple' },
+            { label: 'orange', options: 'orange'},
+            { label: 'tomate', options: 'tomate'},
+            { label: 'pomme', options: 'pomme'},
+        ]},
+    { label: 'féculent', options: [
+            { value: 'patte', label: 'patte' },
+            { label: 'riz', options: 'riz'},
+            { label: 'pâte', options: 'pâte'},
+        ]}
+
+
+]
+const formatGroupLabel = data => (
+    <div style={groupStyles}>
+        <span>{data.label}</span>
+        <span style={groupBadgeStyles}>{data.options.length}</span>
+    </div>
+);
+
+const groupStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+};
+
+const groupBadgeStyles = {
+    backgroundColor: '#EBECF0',
+    borderRadius: '2em',
+    color: '#172B4D',
+    display: 'inline-block',
+    fontSize: 12,
+    fontWeight: 'normal',
+    lineHeight: '1',
+    minWidth: 1,
+    padding: '0.16666666666667em 0.5em',
+    textAlign: 'center',
+};
+/*const option = [
   { value: 'apple', label: 'apple' },
   { value: 'oignon', label: 'oignon' },
   { value: 'tomate', label: 'tomate' },
@@ -146,7 +195,7 @@ const option = [
   { value: 'riz', label: 'riz'},
   { value: 'patte', label: 'patte'},
   { value: 'carotte', label: 'carotte'},
-]
+]*/
 const customModal= {
   content: {
     top: '50%',
