@@ -130,7 +130,7 @@ class Search extends Component {
                   components={animatedComponents}
                   isMulti
                   placeholder="choose your ingredients ..."
-                  options={groupedOptions}
+                  options={option}
                   formatGroupLabel={formatGroupLabel}
                   onChange={(event) => this.newSelectValue(event)}/>
          {this.filtre()}
@@ -186,16 +186,14 @@ const groupBadgeStyles = {
     padding: '0.16666666666667em 0.5em',
     textAlign: 'center',
 };
-/*const option = [
-  { value: 'apple', label: 'apple' },
+const option = [
+  { value: 'pomme', label: 'pomme' },
   { value: 'oignon', label: 'oignon' },
   { value: 'tomate', label: 'tomate' },
   { value: 'orange', label: 'orange' },
-  { value: 'carottes', label: 'carottes'},
   { value: 'riz', label: 'riz'},
-  { value: 'patte', label: 'patte'},
   { value: 'carotte', label: 'carotte'},
-]*/
+]
 const customModal= {
   content: {
     top: '50%',

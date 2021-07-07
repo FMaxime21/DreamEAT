@@ -105,13 +105,13 @@ main {
 
 /* WELCOME PAGE */
 .welcomePage {
-  background-color: white;
+  background-color: var(--black-color);
+  background-image: url(images/Plat.png);
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
   justify-content: space-between;
-  height: 600px;
-
+  height: 500px;
 }
 
 .leftBox {
@@ -593,6 +593,7 @@ text-tuning
   overflow-wrap: break-word;
   border:2px;
   border-color: #d31017;
+  padding: 30px;
 }
 .image {
   /*float: left; !* Indique que le texte sera aligné à gauche *!*/
@@ -609,4 +610,15 @@ text-tuning
 .test123
 {
 text-decoration-color: #0cb765;
+}
+
+
+.center1{
+  left: 50%;
+  position: relative;
+}
+
+.fontRight{
+  font-size: 35px;
+  font-family: 'Bangers', cursive;
 }

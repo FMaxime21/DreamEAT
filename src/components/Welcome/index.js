@@ -55,7 +55,7 @@ const Welcome = (props) => {
                     <div className={"formBoxLeftFamille"}>
                     </div>
                     <div className="formBoxRight2">
-                        <p>esgfqezrgeqrgyguhvfkzersqeffezqsgyuhiougyzqfzefqzefezfzqeqfezfzqeqfzefeqzfefezqqfzefqezfqzefzeqfezfqezfeqzqfzefezzeqfezqfqfesguyiqfezsugiqzefguiyfezugiyqezfguuqfeigyzizgqigqfzegezqigufgeqzuyiquifgyqzeguyigyuifzeqiguyfiezugygiuyzfeqrgiuyfigeuyzuygfze</p>
+                        <p className="fontRight">Avec DreamEAT, découvrez des recettes simples, mais efficaces. Avec la liste déroulante ci-dessous, choisissez un ingrédient que vous possédez et DreamEat se chargera d'afficher les recettes contenant celui-ci qui ont étés crées par et pour les utilisateurs. Nous cherchons à ce que chaque personne, qu'elle soit étudiante, dans la vie active avec tout types de revenus, puisse ne pas gaspiller une quelconque nourriture en la cuisinant dans une recette simple. N'hésitez plus et découvrez DreamEAT.</p>
 
                     </div>
                 </div>
