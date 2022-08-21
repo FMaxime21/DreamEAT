@@ -64,17 +64,39 @@ const Recette = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        const qs = require('qs');
-        axios.post('https://msprapi.000webhostapp.com/ajoutRecette.php',  qs.stringify({
-        'nom_recette': Titre,
-        'description':Description
+        const ididi = 'cd'
+        /*const qs = require('qs');
+        console.log(Titre)
+        console.log(Description)
+        const ididi = 'cd'
+        axios.post('https://api.sheety.co/9784ddeb511a51a42e4b5f82f649116c/dreamEatApi/feuille1',  qs.stringify({
+            ididi,Titre,Description
         }))
         .then((res) => {
             faireRedirection()
         })
         .catch((error) => {
         console.error(error)
+         })*/
+         let url = 'https://api.sheety.co/9784ddeb511a51a42e4b5f82f649116c/dreamEatApi/feuille1';
+           let body = {
+            "feuille1": {
+                "ididi":ididi,"nomRecette":Titre,"description":Description
+            }
+          }
+         console.log(body)
+         fetch(url, {
+           method: 'POST',
+           "headers": {
+            "content-type": "application/json",
+          },
+           body: JSON.stringify(body)
          })
+         .then((response) => response.json())
+         .then(json => {
+           // Do something with object
+           console.log(json.feuille1);
+         });
     }
 
     const {Titre, Ingrédients, Description, Catégorie, CatégorieEntrée, CatégoriePlat, CatégorieDessert} = createdata;

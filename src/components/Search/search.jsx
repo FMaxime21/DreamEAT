@@ -18,13 +18,27 @@ class Search extends Component {
       }
     }
     componentDidMount() {
-      axios.get('https://msprapi.000webhostapp.com/listeRecette.php')
+      /*axios.get('https://msprapi.000webhostapp.com/listeRecette.php')
       .then(response => {
+        
+      console.log('response')
       this.setState({data: response.data.results.Coupon})
       const listOfDescriptionTemp = this.state.data.map(dta => ({description: dta.description})) 
       this.setState({listOfDescription: listOfDescriptionTemp})
       }, error => {
       console.log(error);
+      });*/
+      console.log("ded")
+      let url = 'https://api.sheety.co/9784ddeb511a51a42e4b5f82f649116c/dreamEatApi/feuille1';
+      fetch(url)
+      .then((response) => response.json())
+      .then(json => {
+        // Do something with the data
+        console.log(json.feuille1);
+        console.log('response')
+        this.setState({data: json.feuille1})
+        const listOfDescriptionTemp = this.state.data.map(dta => ({description: dta.description})) 
+        this.setState({listOfDescription: listOfDescriptionTemp})
       });
     }
 
@@ -92,7 +106,7 @@ class Search extends Component {
               id={rct.id_recette}
               className={"recetteList" }
               onClick = {() => this.getid(rct.id_recette)}>
-              <p   style={{padding:"10px"}}>nom de la recette : {rct.nom_recette}</p>
+              <p   style={{padding:"10px"}}>nom de la recette : {rct.nomRecette}</p>
               <img src = {image} width="100" height="70" style={{position:"relative"}}/>
               <Modal 
               style={customModal}
