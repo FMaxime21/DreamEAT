@@ -96,7 +96,10 @@ const Recette = (props) => {
          .then(json => {
            // Do something with object
            console.log(json.feuille1);
-         });
+         })
+         .then((res) => {
+            faireRedirection()
+        })
     }
 
     const {Titre, Ingrédients, Description, Catégorie, CatégorieEntrée, CatégoriePlat, CatégorieDessert} = createdata;
