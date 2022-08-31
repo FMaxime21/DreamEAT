@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Bangers|Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
+
+:root {
+  --white-color: #ffffff;
+  --light-grey-color: #EAE8E8;
+  --light-green-color: #1ecc78;
+  --green-color: #0cb765;
+  --red-color: #EB1D27;
+  --blue-color: #4f78a4;
+  --dark-red-color: #d31017;
+  --dark-grey-color: #363636;
+  --black-color: #333030;
+  --deep-black-color: #000000;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.container{
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 30px;
+  flex: 0 1 80%;
+  display: flex;
+  align-items: stretch;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 70px;
+  color: var(--white-color);
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 6px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+h1 a {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Bangers', cursive;
+}
+
+h1 a:hover {
+  color: inherit;
+}
+
+h2,
+h3 {
+  font-weight: normal;
+  text-align: left;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  background: #333030;
+  background-repeat: no-repeat;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 10px 0;
+
+
+}
+
+/* MAIN */
+main {
+  flex-grow: 1;
+}
+/* END MAIN */
+
+/* WELCOME PAGE */
+.welcomePage {
+  background-color: var(--black-color);
+  background-image: url(images/Plat.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.leftBox {
+  display: flex;
+  flex: 0 1 35%;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.rightBox {
+  display: flex;
+  flex: 0 1 35%;
+  align-items: flex-start;
+}
+
+.btn-welcome {
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+  padding: 12px 25px;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 400px;
+}
+
+.btn-welcome:hover {
+  border: 2px solid var(--white-color);
+  color: var(--red-color);
+  background-color: var(--white-color);
+}
+
+/* END WELCOME PAGE */
+
+/* TOASTIFY COLOR */
+.toastify-color-welcome {
+  color: var(--black-color);
+}
+.toastify-color {
+  color: var(--white-color);
+}
+/* END TOASTIFY COLOR */
+
+FOOTER
+footer {
+   display: flex;
+  align-content: center;
+
+}
+
+.footer-container {
+
+  padding: 20px 0;
+  padding: 20px 0;
+}
+.footer-container2{
+  width: 50%;
+
+}
+
+.footer-container td {
+
+  width: 1000px;
+}
+/* END FOOTER */
+
+/* ERROR PAGE */
+.quiz-bg {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: center;
+}
+
+/* END ERROR PAGE */
+
+/* SIGNUP - LOGIN - FORGETPASSWORD */
+.signUpLoginBox {
+  background-image: url(images/bg-noise-texture.png);
+  background-repeat: repeat;
+  -webkit-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
+  display: flex;
+  justify-content: center;
+}
+
+.slContainer {
+  flex: 0 1 50%;
+  display: flex;
+}
+
+@media only screen and (min-width: 1000px) {
+  .formBoxLeftSignup {
+    min-height: 500px;
+    background-image: url(images/fond_inscription.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    flex: 0 1 50%;
+    height: 800px;
+  }
+}
+
+.formBoxLeftLogin {
+  min-height: 500px;
+  background-image: url(images/Fond_Connexion.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex: 0 1 50%;
+  height: 800px;
+}
+
+.formBoxLeftForget {
+  min-height: 500px;
+  background-image: url(images/5-fruits-et-légumes.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex: 0 1 50%;
+  height: 800px;
+}
+
+.formBoxLeftRecette {
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex: 0 1 50%;
+  height: 800px;
+}
+
+.formBoxRight {
+  flex: 0 1 50%;
+}
+
+.formBoxRight span {
+  display: block;
+  color: var(--red-color);
+  text-align: center;
+  border: 1px solid var(--red-color);
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.formContent {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.formContent h2 {
+  margin: 0 0 40px 0;
+  padding: 0;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+.formContent .inputBox {
+  position: relative;
+  height: 70px;
+
+
+}
+
+.formContent .inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 17px;
+  color: var(--red-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid var(--white-color);
+  outline: none;
+  z-index: 2;
+}
+
+.formContent .inputBox label {
+  color: var(--white-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 17px;
+  pointer-events: none;
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.formContent .inputBox input:focus~label,
+.formContent .inputBox input:valid~label {
+  top: -30px;
+  left: 0;
+  color: var(--white-color);
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Form buttons */
+.formContent button {
+  margin-left: 0;
+  display: block;
+  margin: 0 auto 20px;
+  min-width: 150px;
+  background-color: transparent;
+  color: var(--white-color);
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.formContent button:hover {
+  background-color: var(--red-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled],
+button:disabled:hover,
+button[disabled]:hover {
+  border: 1px solid var(--light-grey-color);
+  background-color: var(--light-grey-color);
+  color: var(--dark-grey-color);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.linkContainer {
+  height: 50px;
+  margin-top: 35px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--light-grey-color);
+}
+
+.simpleLink {
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.simpleLink:hover {
+  color: var(--red-color);
+}
+/* END SIGNUP - LOGIN - FORGETPASSWORD */
+
+/* LOADER */
+.loader {
+  border: 10px solid var(--light-grey-color);
+  border-radius: 50%;
+  border-top: 10px solid var(--dark-red-color);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  margin: 40px auto 20px;
+}
+
+.loaderText {
+  text-align: center;
+  color: var(--white-color);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* END LOADER */
+
+/* LOGOUT SWITCH */
+.logoutContainer {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  right: 200px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light-grey-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: var(--red-color);
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* END LOGOUT SWITCH */
+
+.welcomePage2 {
+  background-color: var(--green-color);
+  background-image: url(images/ustensiles.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: space-between;
+  height: 600px;
+}
+
+.lmj-cart {
+  color: white;
+  background-color: #31b572;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+}
+
+.lmj-cart-add-button {
+  margin-left: 32px;
+  cursor: pointer;
+}
+
+.lmj-cart-toggle-button {
+  background: none;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: self-start;
+  padding: 0;
+  color: white;
+  align-self: flex-end;
+}
+
+.lmj-cart-closed {
+  padding: 32px;
+  width: 300px;
+}
+
+.lmj-cart-closed > button {
+  color: black;
+}
+
+table
+{
+  border-collapse: collapse;
+  background-color: #333030;
+}
+td, th /* Mettre une bordure sur les td ET les th */
+{
+  border: 2px solid black;
+}
+
+.taille
+{
+  height: 65px;
+}
+
+.margin
+{
+  margin-top: 200px;
+}
+
+.taille2
+{
+  height: 100px;
+  text-align: center;
+}
+
+.taille3
+{
+  height:1px;
+}
+
+.btn-upload {
+  background-color: #fff;
+  border: 3px solid #000;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+text-tuning
+{
+  color: #000;
+}
+
+.recetteList
+{
+  text-align: center;
+  min-width: 15vw;
+  max-width: 15vw;
+  display: table;
+  background-color: white;
+  border-radius: 10px;
+  margin: 1%;
+}
+.formBoxLeftFamille
+{
+  min-height: 500px;
+  background-image: url(images/famille.png);
+  background-repeat: no-repeat;
+  float: left;
+  height: auto;
+  width: auto;
+  min-width: 50%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  margin-right: 0%;
+}
+.slContainer2
+{
+  flex: 0 1 50%;
+  display: flex;
+  background-color: darkgrey;
+}
+.formBoxRight2 {
+  min-width: 45%;
+  overflow-wrap: break-word;
+  border:2px;
+  border-color: #d31017;
+  padding: 30px;
+}
+.image {
+  /*float: left; !* Indique que le texte sera aligné à gauche *!*/
+  margin:0 6px 6px 0;
+  /*text-align: justify; !* Le texte à côté de l'image sera justifié *!*/
+}
+
+
+.quiz-bg2 {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white-color);
+}
+.test123
+{
+text-decoration-color: #0cb765;
+}
+
+
+.center1{
+  left: 50%;
+  position: relative;
+}
+
+.fontRight{
+  font-size: 35px;
+  font-family: 'Bangers', cursive;
+}
