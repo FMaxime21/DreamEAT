@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import MenuItems from "./MenuItems";
 import "./Navbar.css";
 
+
 const Navbar = props => {
   const [click, setClick] = React.useState();
 

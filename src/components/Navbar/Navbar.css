@@ -41,11 +41,11 @@
 
 .color 
 {
-    background-color: rgb(29, 172, 255);
+    background-color: rgb(1, 172, 255);
 }
 
 .nav-link:hover {
-    background-color: rgb(29, 172, 255);
+    background-color: rgb(148, 208, 243);
 }
 
 @media only screen and (max-width: 768px) {

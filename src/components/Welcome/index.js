@@ -45,6 +45,7 @@ const Welcome = (props) => {
     ) : (
         <div>
             <div className="quiz-bg">
+                <h2>Bienvenue</h2>
                 <div className="container">
                     <Logout/>
                     <Quiz userData={userData}/>
